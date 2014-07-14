@@ -19,7 +19,6 @@ $(document).ready( function() {
 // this function takes the question object returned by StackOverflow 
 // and creates new result to be appended to DOM
 
-
 var showQuestion = function(question) {
 	
 	// clone our result template code
@@ -54,10 +53,10 @@ var showQuestion = function(question) {
 var showAnswerer = function(answer) {
 	
 	
-	// clone our result template code
+	
 	var result = $('.templates .answerer').clone();
 	
-	// Set the question properties in result
+	
 	var answerElem = result.find('.answer-text a');
 	answerElem.attr('href', answer.link);
 	answerElem.text(answer.title);
@@ -65,10 +64,10 @@ var showAnswerer = function(answer) {
 	var posts = result.find('.posts');
 	posts.text(answer.post_count);
 
-	// set the date asked property in result
+	
 	var score = result.find('.points');
 	score.text(answer.score);
-	// set some properties related to asker
+	
 	var answers = result.find('.answer');
 	answers.html('<p>Name: <a target="_blank" href=http://stackoverflow.com/users/' + answer.user.user_id + ' >' + answer.user.display_name +'</a>' +'</p>' 
 	);
